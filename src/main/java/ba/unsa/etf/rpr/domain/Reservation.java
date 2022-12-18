@@ -3,18 +3,18 @@ package ba.unsa.etf.rpr.domain;
 import java.util.Date;
 import java.util.Objects;
 
-public class Reservation {
-    private int idReservation;
+public class Reservation implements Idable {
+    private int id;
     private Date arrivalDate;
     private Date departudeDate;
     private User user;
 
-    public int getIdReservation() {
-        return idReservation;
+    public int getId() {
+        return id;
     }
 
-    public void setIdReservation(int idReservation) {
-        this.idReservation = idReservation;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getArrivalDate() {
@@ -44,7 +44,7 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation{" +
-                "idReservation=" + idReservation +
+                "id=" + id +
                 ", arrivalDate=" + arrivalDate +
                 ", departudeDate=" + departudeDate +
                 ", user=" + user +
@@ -56,11 +56,11 @@ public class Reservation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Reservation that = (Reservation) o;
-        return idReservation == that.idReservation;
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idReservation, arrivalDate, departudeDate, user);
+        return Objects.hash(id, arrivalDate, departudeDate, user);
     }
 }
