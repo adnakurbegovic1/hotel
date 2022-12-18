@@ -7,7 +7,6 @@ public class Reservation {
     private int idReservation;
     private Date arrivalDate;
     private Date departudeDate;
-    private Room room;
     private User user;
 
     public int getIdReservation() {
@@ -34,14 +33,6 @@ public class Reservation {
         this.departudeDate = departudeDate;
     }
 
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
     public User getUser() {
         return user;
     }
@@ -56,7 +47,6 @@ public class Reservation {
                 "idReservation=" + idReservation +
                 ", arrivalDate=" + arrivalDate +
                 ", departudeDate=" + departudeDate +
-                ", room=" + room +
                 ", user=" + user +
                 '}';
     }
@@ -71,6 +61,6 @@ public class Reservation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(idReservation, arrivalDate, departudeDate, room, user);
+        return Objects.hash(idReservation, arrivalDate, departudeDate, user);
     }
 }

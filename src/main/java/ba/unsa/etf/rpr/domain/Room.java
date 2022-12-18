@@ -9,6 +9,8 @@ public class Room {
     private int price;
     private Hotel hotel;
 
+    private Reservation reservation;
+
     public int getIdRoom() {
         return idRoom;
     }
@@ -39,6 +41,14 @@ public class Room {
 
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }
 
     @Override
