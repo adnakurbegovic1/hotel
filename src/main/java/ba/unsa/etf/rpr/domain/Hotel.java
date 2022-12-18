@@ -2,19 +2,19 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
-public class Hotel {
+public class Hotel implements Idable {
 
-private int idHotel;
+private int id;
 private int numberOfRooms;
 private int numberOfStars;
 private String name;
 
-    public int getIdHotel() {
-        return idHotel;
+    public int getId() {
+        return id;
     }
 
-    public void setIdHotel(int idHotel) {
-        this.idHotel = idHotel;
+    public void setId(int idHotel) {
+        this.id = idHotel;
     }
 
     public int getNumberOfRooms() {
@@ -44,7 +44,7 @@ private String name;
     @Override
     public String toString() {
         return "Hotel{" +
-                "idHotel=" + idHotel +
+                "id=" + id +
                 ", numberOfRooms=" + numberOfRooms +
                 ", numberOfStars=" + numberOfStars +
                 ", name='" + name + '\'' +
@@ -56,11 +56,12 @@ private String name;
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Hotel hotel = (Hotel) o;
-        return idHotel == hotel.idHotel;
+        return id == hotel.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idHotel, numberOfRooms, numberOfStars, name);
+        return Objects.hash(id, numberOfRooms, numberOfStars, name);
     }
+
 }
