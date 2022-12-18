@@ -44,7 +44,10 @@ private String name;
     @Override
     public String toString() {
         return "Hotel{" +
-                "name='" + name + '\'' +
+                "idHotel=" + idHotel +
+                ", numberOfRooms=" + numberOfRooms +
+                ", numberOfStars=" + numberOfStars +
+                ", name='" + name + '\'' +
                 '}';
     }
 
