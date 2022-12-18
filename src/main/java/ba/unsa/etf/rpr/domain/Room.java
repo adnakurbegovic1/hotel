@@ -2,21 +2,21 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
-public class Room {
+public class Room implements Idable {
 
-    private int idRoom;
+    private int id;
     private int capacity;
     private int price;
     private Hotel hotel;
 
     private Reservation reservation;
 
-    public int getIdRoom() {
-        return idRoom;
+    public int getId() {
+        return id;
     }
 
-    public void setIdRoom(int idRoom) {
-        this.idRoom = idRoom;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCapacity() {
@@ -54,7 +54,7 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "idRoom=" + idRoom +
+                "id=" + id +
                 ", capacity=" + capacity +
                 ", price=" + price +
                 ", hotel=" + hotel +
@@ -66,11 +66,11 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return idRoom == room.idRoom;
+        return id == room.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idRoom, capacity, price, hotel);
+        return Objects.hash(id, capacity, price, hotel);
     }
 }
