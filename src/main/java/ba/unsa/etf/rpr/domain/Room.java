@@ -7,7 +7,7 @@ public class Room {
     private int idRoom;
     private int capacity;
     private int price;
-    private int hotelId;
+    private Hotel hotel;
 
     public int getIdRoom() {
         return idRoom;
@@ -33,12 +33,12 @@ public class Room {
         this.price = price;
     }
 
-    public int getHotelId() {
-        return hotelId;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setHotelId(int hotelId) {
-        this.hotelId = hotelId;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class Room {
                 "idRoom=" + idRoom +
                 ", capacity=" + capacity +
                 ", price=" + price +
-                ", hotelId=" + hotelId +
+                ", hotel=" + hotel +
                 '}';
     }
 
@@ -61,6 +61,6 @@ public class Room {
 
     @Override
     public int hashCode() {
-        return Objects.hash(idRoom, capacity, price, hotelId);
+        return Objects.hash(idRoom, capacity, price, hotel);
     }
 }
