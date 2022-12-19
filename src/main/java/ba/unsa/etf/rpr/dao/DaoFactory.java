@@ -26,7 +26,7 @@ public class DaoFactory {
         return roomDao;
     }
 
-    public static UserDao UserDao(){
+    public static UserDao userDao(){
         return userDao;
     }
 }

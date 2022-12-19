@@ -19,8 +19,8 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
             r.setId(rs.getInt("id"));
             r.setCapacity(rs.getInt("capacity"));
             r.setPrice(rs.getInt("price"));
-            r.setHotel(DaoFactory.roomDao().getById(rs.getInt("hotelId")));
-            r.setReservation(DaoFactory.roomDao().getById(rs.getInt("reservationId")));
+            r.setHotel(DaoFactory.hotelDao().getById(rs.getInt("hotelId")));
+            r.setReservation(DaoFactory.reservationDao().getById(rs.getInt("reservationId")));
             return r;
         } catch (Exception e) {
             throw new HotelException(e.getMessage(), e);
