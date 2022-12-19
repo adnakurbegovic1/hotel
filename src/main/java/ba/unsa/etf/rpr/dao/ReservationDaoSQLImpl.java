@@ -3,10 +3,10 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
+import java.util.Date;
+
 
 /**
  * MySQL implementation of DAO
@@ -26,7 +26,7 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
             r.setId(rs.getInt("id"));
             r.setArrivalDate(rs.getDate("arrivalDate"));
             r.setDepartudeDate(rs.getDate("departudeDate"));
-            r.setUser(DaoFactory.quoteDao().getById(rs.getInt("userId")));
+            r.setUser(DaoFactory.reservationDao().getById(rs.getInt("userId")));
             return r;
         }catch (SQLException e){
             throw new HotelException(e.getMessage(), e);

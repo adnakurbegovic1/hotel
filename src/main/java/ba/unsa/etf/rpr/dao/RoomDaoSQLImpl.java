@@ -3,13 +3,8 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.sql.*;
+import java.util.*;
 
 public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
 
@@ -24,8 +19,8 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
             r.setId(rs.getInt("id"));
             r.setCapacity(rs.getInt("capacity"));
             r.setPrice(rs.getInt("price"));
-            r.setHotel(DaoFactory.categoryDao().getById(rs.getInt("hotelId")));
-            r.setReservation(DaoFactory.categoryDao().getById(rs.getInt("reservationId")));
+            r.setHotel(DaoFactory.roomDao().getById(rs.getInt("hotelId")));
+            r.setReservation(DaoFactory.roomDao().getById(rs.getInt("reservationId")));
             return r;
         } catch (Exception e) {
             throw new HotelException(e.getMessage(), e);
