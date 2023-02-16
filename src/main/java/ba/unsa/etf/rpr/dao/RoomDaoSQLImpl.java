@@ -8,8 +8,20 @@ import java.util.*;
 
 public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
 
+    private static RoomDaoSQLImpl instance = null;
     public RoomDaoSQLImpl() {
         super("rooms");
+    }
+
+    public static RoomDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new RoomDaoSQLImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
     }
 
     @Override
