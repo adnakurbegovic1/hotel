@@ -15,8 +15,19 @@ import java.util.Date;
 
 public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements ReservationDao{
 
+    private static ReservationDaoSQLImpl instance = null;
     public ReservationDaoSQLImpl() {
         super("reservations");
+    }
+
+    public static ReservationDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new ReservationDaoSQLImpl();
+        return instance;
+    }
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
     }
 
     @Override
