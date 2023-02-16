@@ -15,6 +15,18 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
         super("users");
     }
 
+    private static UserDaoSQLImpl instance = null;
+    public static UserDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new UserDaoSQLImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
+    }
+
     @Override
     public User row2object(ResultSet rs) throws HotelException {
         try {
