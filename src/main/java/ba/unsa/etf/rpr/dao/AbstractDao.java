@@ -8,27 +8,42 @@ import java.sql.*;
 import java.util.*;
 
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
-    private Connection connection;
+    private static Connection connection = null;
     private String tableName;
 
     public AbstractDao(String tableName) {
-        try{
             this.tableName = tableName;
-            Properties p = new Properties();
-            p.load(ClassLoader.getSystemResource("application.properties").openStream());
-            String url = p.getProperty("db.connection_string");
-            String username = p.getProperty("db.username");
-            String password = p.getProperty("db.password");
-            this.connection = DriverManager.getConnection(url, username, password);
-        }catch (Exception e){
-            System.out.println("nemoguce uraditi konekciju na bazu");
-            e.printStackTrace();
+            createConnection();
+    }
 
+    private static void createConnection(){
+        if(AbstractDao.connection==null){
+            try{
+                Properties p = new Properties();
+                p.load(ClassLoader.getSystemResource("application.properties").openStream());
+                String url = p.getProperty("db.connection_string");
+                String username = p.getProperty("db.username");
+                String password = p.getProperty("db.password");
+                AbstractDao.connection = DriverManager.getConnection(url, username, password);
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                Runtime.getRuntime().addShutdownHook(new Thread(){
+                    @Override
+                    public void run(){
+                        try {
+                            connection.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
         }
     }
 
     public Connection getConnection(){
-        return this.connection;
+        return AbstractDao.connection;
     }
 
     public abstract T row2object(ResultSet rs) throws HotelException;
@@ -129,7 +144,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
                 stmt.setObject(counter, entry.getValue());
                 counter++;
             }
-            stmt.setObject(counter+1, item.getId());
+            stmt.setObject(counter, item.getId());
             stmt.executeUpdate();
             return item;
         }catch (SQLException e){
@@ -162,7 +177,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     /**
      * Prepare columns for update statement id=?, name=?, ...
      * @param row
-     * @return
+     * @return String
      */
     private String prepareUpdateParts(Map<String, Object> row){
         StringBuilder columns = new StringBuilder();
