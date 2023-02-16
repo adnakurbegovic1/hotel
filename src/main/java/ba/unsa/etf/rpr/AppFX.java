@@ -21,7 +21,7 @@ public class AppFX extends Application {
         fxmlLoader.setController(homeController);
         Parent root = fxmlLoader.load();
 
-        stage.setTitle("Hello");
+        stage.setTitle("Hotel \"50 zvjezdica\"");
         stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
         stage.show();
