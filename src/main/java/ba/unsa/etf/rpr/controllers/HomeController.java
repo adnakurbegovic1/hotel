@@ -13,6 +13,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class HomeController {
 
     public Button loginBtn;
+    public Button registrationBtn;
 
     public void showLoginPage(ActionEvent event){
         try {
@@ -21,6 +22,23 @@ public class HomeController {
             LoginController c = new LoginController();
             fxmlLoader.setController(c);
             stage.setTitle("Prijava");
+            stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+        }
+        catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+    public void showRegistrationPage(ActionEvent event){
+        try {
+            Stage stage = (Stage) loginBtn.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/registration.fxml"));
+            LoginController c = new LoginController();
+            fxmlLoader.setController(c);
+            stage.setTitle("Registracija");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
             stage.show();
