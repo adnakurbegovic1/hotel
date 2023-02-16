@@ -14,8 +14,20 @@ import java.util.TreeMap;
 
 public class HotelDaoSQLImpl extends AbstractDao<Hotel> implements HotelDao{
 
+    private static HotelDaoSQLImpl instance = null;
     public HotelDaoSQLImpl() {
         super("hotels");
+    }
+
+    public static HotelDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new HotelDaoSQLImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
     }
 
     @Override
