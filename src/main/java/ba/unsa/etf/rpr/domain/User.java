@@ -8,6 +8,16 @@ public class User implements Idable {
     private String surname;
     private String email;
 
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int getId() {
         return id;
     }
@@ -47,6 +57,7 @@ public class User implements Idable {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 
@@ -60,6 +71,6 @@ public class User implements Idable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, email);
+        return Objects.hash(id, name, surname, email, password);
     }
 }
