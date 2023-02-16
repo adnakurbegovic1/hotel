@@ -35,6 +35,7 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
             u.setName(rs.getString("name"));
             u.setSurname(rs.getString("surname"));
             u.setEmail(rs.getString("email"));
+            u.setPassword(rs.getString("password"));
             return u;
         } catch (SQLException e) {
             throw new HotelException(e.getMessage(), e);
@@ -48,6 +49,7 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
         row.put("name", object.getName());
         row.put("surname", object.getSurname());
         row.put("email", object.getEmail());
+        row.put("password", object.getPassword());
         return row;
     }
 }
