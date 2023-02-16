@@ -55,20 +55,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     public List<T> getAll() throws HotelException {
-        String query = "SELECT * FROM "+ tableName;
-        List<T> results = new ArrayList<T>();
-        try{
-            PreparedStatement stmt = getConnection().prepareStatement(query);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()){ // result set is iterator.
-                T object = row2object(rs);
-                results.add(object);
-            }
-            rs.close();
-            return results;
-        }catch (SQLException e){
-            throw new HotelException(e.getMessage(), e);
-        }
+        return executeQuery("SELECT * FROM "+ tableName, null);
     }
 
     public void delete(int id) throws HotelException {
