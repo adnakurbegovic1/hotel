@@ -24,6 +24,7 @@ public class HomeController {
             stage.setTitle("Prijava");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
+            stage.setResizable(false);
             stage.show();
 
         }
@@ -40,6 +41,7 @@ public class HomeController {
             fxmlLoader.setController(c);
             stage.setTitle("Registracija");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
             stage.setResizable(false);
             stage.show();
 
