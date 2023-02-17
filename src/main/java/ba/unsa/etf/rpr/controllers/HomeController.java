@@ -35,7 +35,7 @@ public class HomeController {
 
     public void showRegistrationPage(ActionEvent event){
         try {
-            Stage stage = (Stage) loginBtn.getScene().getWindow();
+            Stage stage = (Stage) registrationBtn.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/registration.fxml"));
             LoginController c = new LoginController();
             fxmlLoader.setController(c);
