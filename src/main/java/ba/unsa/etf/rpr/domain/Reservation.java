@@ -9,6 +9,16 @@ public class Reservation implements Idable {
     private Date departudeDate;
     private User user;
 
+    private int roomNumber;
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
     public int getId() {
         return id;
     }
@@ -48,6 +58,7 @@ public class Reservation implements Idable {
                 ", arrivalDate=" + arrivalDate +
                 ", departudeDate=" + departudeDate +
                 ", user=" + user +
+                ", roomNumber=" + roomNumber +
                 '}';
     }
 
@@ -61,6 +72,6 @@ public class Reservation implements Idable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, arrivalDate, departudeDate, user);
+        return Objects.hash(id, arrivalDate, departudeDate, user, roomNumber);
     }
 }

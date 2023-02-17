@@ -38,6 +38,7 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
             r.setArrivalDate(rs.getDate("arrivalDate"));
             r.setDepartudeDate(rs.getDate("departudeDate"));
             r.setUser(DaoFactory.userDao().getById(rs.getInt("userId")));
+            r.setId(rs.getInt("roomNumber"));
             return r;
         }catch (SQLException e){
             throw new HotelException(e.getMessage(), e);
@@ -52,6 +53,7 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
         item.put("arrivalDate", object.getArrivalDate());
         item.put("departudeDate", object.getDepartudeDate());
         item.put("userId", object.getUser().getId());
+        item.put("roomNumber", object.getRoomNumber());
         return item;
     }
 

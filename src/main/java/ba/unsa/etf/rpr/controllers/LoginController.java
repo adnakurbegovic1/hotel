@@ -1,6 +1,4 @@
 package ba.unsa.etf.rpr.controllers;
-
-import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -35,14 +33,10 @@ public class LoginController {
         catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     public void goToMain(ActionEvent event){
-
-
         try {
-
             u.setPassword(passwordFld.getText());
             u.setEmail(emailFld.getText());
             Stage stage = (Stage) btnLogin.getScene().getWindow();
@@ -53,7 +47,6 @@ public class LoginController {
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
             stage.show();
-
         }
         catch (Exception e){
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
