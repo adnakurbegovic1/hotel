@@ -15,6 +15,11 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class RegistrationController {
     public Button cancelBtn;
+    public Button btnRegistration;
+    public TextField nameId;
+    public TextField surnameId;
+    public TextField emailId;
+    public PasswordField passwordId;
 
     public void backToHome(ActionEvent actionEvent) {
         try{
@@ -31,6 +36,35 @@ public class RegistrationController {
             e.printStackTrace();
         }
 
+    }
+
+    public void registrationForNewUser(ActionEvent actionEvent) {
+        try {
+            User u = new User();
+            u.setName(nameId.getText());
+            u.setSurname(surnameId.getText());
+            u.setPassword(passwordId.getText());
+            u.setEmail(emailId.getText());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Registracija");
+            alert.setHeaderText("Rezultat:");
+            alert.setContentText("Hvala Vam na registraciji! Molimo prijavite se!");
+            alert.showAndWait();
+
+            Stage stage = (Stage) btnRegistration.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            fxmlLoader.setController(new LoginController());
+            Parent root = fxmlLoader.load();
+            stage.setTitle("Prijava");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
 }
