@@ -1,4 +1,5 @@
 package ba.unsa.etf.rpr.controllers;
+import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +40,7 @@ public class LoginController {
         try {
             u.setPassword(passwordFld.getText());
             u.setEmail(emailFld.getText());
+            UserManager.login(u.getEmail(), u.getPassword());
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
             MainController cont = new MainController();
