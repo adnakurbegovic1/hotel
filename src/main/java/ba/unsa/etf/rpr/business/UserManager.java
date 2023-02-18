@@ -20,4 +20,15 @@ public class UserManager {
 
         return u;
     }
+
+    public static User registration(User user) throws HotelException {
+        try {
+            return DaoFactory.userDao().add(user);
+        } catch (HotelException e) {
+            if (e.getMessage().contains("email")) {
+                throw new HotelException("Korisnik već postoji");
+            }
+            throw e;
+        }
+    }
 }
