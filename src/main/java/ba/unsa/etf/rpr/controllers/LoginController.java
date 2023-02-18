@@ -16,8 +16,8 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class LoginController {
 
     public Button cancelBtn;
-    public TextField emailFld;
-    public PasswordField passwordFld;
+    public TextField emailId;
+    public PasswordField passwordId;
     public Button btnLogin;
     User u = new User();
     public void backToHome(ActionEvent actionEvent) {
@@ -38,8 +38,8 @@ public class LoginController {
 
     public void goToMain(ActionEvent event){
         try {
-            u.setPassword(passwordFld.getText());
-            u.setEmail(emailFld.getText());
+            u.setPassword(passwordId.getText());
+            u.setEmail(emailId.getText());
             UserManager.login(u.getEmail(), u.getPassword());
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));

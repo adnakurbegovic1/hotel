@@ -1,7 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Idable;
-import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
 import java.sql.*;
@@ -20,7 +19,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         if(AbstractDao.connection==null){
             try{
                 Properties p = new Properties();
-                p.load(ClassLoader.getSystemResource("application.properties").openStream());
+                p.load(ClassLoader.getSystemResource("db.properties").openStream());
                 String url = p.getProperty("db.connection_string");
                 String username = p.getProperty("db.username");
                 String password = p.getProperty("db.password");

@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -45,11 +46,12 @@ public class RegistrationController {
             u.setSurname(surnameId.getText());
             u.setPassword(passwordId.getText());
             u.setEmail(emailId.getText());
+            UserManager.registration(u);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Registracija");
             alert.setHeaderText("Rezultat:");
-            alert.setContentText("Hvala Vam na registraciji! Molimo prijavite se!");
+            alert.setContentText("Uspješno ste se registrovali! Molimo Vas da se prijavite!");
             alert.showAndWait();
 
             Stage stage = (Stage) btnRegistration.getScene().getWindow();
