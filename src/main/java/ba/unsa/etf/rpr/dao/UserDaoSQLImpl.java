@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.domain.Hotel;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
@@ -51,5 +52,24 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
         row.put("email", object.getEmail());
         row.put("password", object.getPassword());
         return row;
+    }
+
+    public User getByEmail(String email) throws HotelException{
+        String query = "SELECT * FROM  users  WHERE email = ?";
+        try{
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                User result = row2object(rs);
+                rs.close();
+                return result;
+            } else {
+                throw new HotelException("Korisnik nije pronađen!");
+            }
+        } catch (SQLException e) {
+            throw new HotelException(e.getMessage(), e);
+        }
     }
 }
