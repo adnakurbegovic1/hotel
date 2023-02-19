@@ -7,9 +7,6 @@ public class Room implements Idable {
     private int id;
     private int capacity;
     private int price;
-
-    private Reservation reservation;
-
     public int getId() {
         return id;
     }
@@ -32,14 +29,6 @@ public class Room implements Idable {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public Reservation getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
     }
 
     @Override
