@@ -2,6 +2,9 @@ package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.exceptions.HotelException;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.*;
@@ -86,6 +89,22 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
                 roomLista.add(row2object(rs));
             }
             return roomLista;
+        } catch (SQLException e) {
+            throw new HotelException(e.getMessage(), e);
+        }
+    }
+
+    public ObservableList<Room> allRooms() throws HotelException{
+        String query = "SELECT * FROM rooms";
+
+        ObservableList<Room> result = FXCollections.observableArrayList();
+        try {
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                result.add(row2object(rs));
+            }
+            return result;
         } catch (SQLException e) {
             throw new HotelException(e.getMessage(), e);
         }

@@ -33,10 +33,10 @@ public class Room implements Idable {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "id=" + id +
-                ", capacity=" + capacity +
-                ", price=" + price +
+        return "Soba {" +
+                "broj = " + id +
+                ", kapacitet = " + capacity +
+                ", cijena (KM) = " + price +
                 '}';
     }
 
