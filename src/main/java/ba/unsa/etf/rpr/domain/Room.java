@@ -7,7 +7,6 @@ public class Room implements Idable {
     private int id;
     private int capacity;
     private int price;
-    private Hotel hotel;
 
     private Reservation reservation;
 
@@ -35,14 +34,6 @@ public class Room implements Idable {
         this.price = price;
     }
 
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
-    }
-
     public Reservation getReservation() {
         return reservation;
     }
@@ -57,7 +48,6 @@ public class Room implements Idable {
                 "id=" + id +
                 ", capacity=" + capacity +
                 ", price=" + price +
-                ", hotel=" + hotel +
                 '}';
     }
 
@@ -71,6 +61,6 @@ public class Room implements Idable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, capacity, price, hotel);
+        return Objects.hash(id, capacity, price);
     }
 }
