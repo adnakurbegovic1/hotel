@@ -35,7 +35,15 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding></Button>
       <ListView fx:id="listOfRooms" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-      <Button fx:id="btnAddRoom" mnemonicParsing="false" onAction="#addNewRoom" text="Dodaj sobu" GridPane.rowIndex="2">
+      <Button fx:id="btnAddRoom" mnemonicParsing="false" onAction="#addNewRoom" prefHeight="27.0" prefWidth="97.0" text="Dodaj sobu" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Button fx:id="btnBack" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="72.0" text="Nazad" GridPane.halignment="LEFT" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>

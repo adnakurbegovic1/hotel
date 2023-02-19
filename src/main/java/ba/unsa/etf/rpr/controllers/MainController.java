@@ -20,6 +20,7 @@ public class MainController {
     public ListView listOfRooms;
     public Button btnBooking;
     public Button btnAddRoom;
+    public Button btnBack;
     private RoomDaoSQLImpl dao;
     @FXML
     public void initialize() throws HotelException {
@@ -49,6 +50,22 @@ public class MainController {
             AddRoomController cont = new AddRoomController();
             fxmlLoader.setController(cont);
             stage.setTitle("Nova soba:");
+            stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+        }
+        catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+    public void goBack(ActionEvent event){
+        try {
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+            HomeController cont = new HomeController();
+            fxmlLoader.setController(cont);
+            stage.setTitle("Hotel \"50 zvjezdica\"");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
             stage.show();
