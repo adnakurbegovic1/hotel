@@ -13,6 +13,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class MainController {
 
     public Button btnBooking;
+    public Button btnAddRoom;
     public void goBookingRoom(ActionEvent event){
         try {
             Stage stage = (Stage) btnBooking.getScene().getWindow();
@@ -20,6 +21,22 @@ public class MainController {
             ReservationController cont = new ReservationController();
             fxmlLoader.setController(cont);
             stage.setTitle("Rezervacija");
+            stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+        }
+        catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+    public void addNewRoom(ActionEvent event){
+        try {
+            Stage stage = (Stage) btnAddRoom.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/addRoom.fxml"));
+            AddRoomController cont = new AddRoomController();
+            fxmlLoader.setController(cont);
+            stage.setTitle("Nova soba:");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
             stage.show();
