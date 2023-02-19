@@ -1,4 +1,4 @@
 package ba.unsa.etf.rpr.controllers;
 
-public class AddRoomController {
+public class ReservationController {
 }
