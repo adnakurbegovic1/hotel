@@ -1,12 +1,13 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
 public class Reservation implements Idable {
     private int id;
-    private Date arrivalDate;
-    private Date departudeDate;
+    private LocalDate arrivalDate;
+    private LocalDate departudeDate;
     private User user;
 
     private int roomNumber;
@@ -27,19 +28,19 @@ public class Reservation implements Idable {
         this.id = id;
     }
 
-    public Date getArrivalDate() {
+    public LocalDate getArrivalDate() {
         return arrivalDate;
     }
 
-    public void setArrivalDate(Date arrivalDate) {
+    public void setArrivalDate(LocalDate arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
 
-    public Date getDepartudeDate() {
+    public LocalDate getDepartudeDate() {
         return departudeDate;
     }
 
-    public void setDepartudeDate(Date departudeDate) {
+    public void setDepartudeDate(LocalDate departudeDate) {
         this.departudeDate = departudeDate;
     }
 

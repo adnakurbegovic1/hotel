@@ -43,7 +43,7 @@ public class LoginController {
             UserManager.login(u.getEmail(), u.getPassword());
             Stage stage = (Stage) BtnLogin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-            MainController cont = new MainController();
+            MainController cont = new MainController(u);
             fxmlLoader.setController(cont);
             stage.setTitle("*****");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

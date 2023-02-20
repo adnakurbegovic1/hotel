@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.dao.RoomDao;
 import ba.unsa.etf.rpr.dao.RoomDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,14 @@ public class MainController {
     public Button btnAddRoom;
     public Button btnBack;
     private RoomDaoSQLImpl dao;
+
+    private User user;
+
+    public MainController(){}
+
+    public MainController(User user){
+        this.user = user;
+    }
     @FXML
     public void initialize() throws HotelException {
         dao = RoomDaoSQLImpl.getInstance();
@@ -31,7 +40,7 @@ public class MainController {
         try {
             Stage stage = (Stage) btnBooking.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reservation.fxml"));
-            ReservationController cont = new ReservationController();
+            ReservationController cont = new ReservationController(user);
             fxmlLoader.setController(cont);
             stage.setTitle("Rezervacija");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

@@ -35,8 +35,8 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
         try{
             Reservation r = new Reservation();
             r.setId(rs.getInt("id"));
-            r.setArrivalDate(rs.getDate("arrivalDate"));
-            r.setDepartudeDate(rs.getDate("departudeDate"));
+            r.setArrivalDate(rs.getDate("arrivalDate").toLocalDate());
+            r.setDepartudeDate(rs.getDate("departudeDate").toLocalDate());
             r.setUser(DaoFactory.userDao().getById(rs.getInt("userId")));
             r.setId(rs.getInt("roomNumber"));
             return r;
