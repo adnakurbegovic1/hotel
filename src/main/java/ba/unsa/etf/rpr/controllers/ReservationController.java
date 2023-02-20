@@ -43,6 +43,11 @@ public class ReservationController {
         this.user = user;
     }
 
+
+    /**
+     * This method makes reservation
+     * @param event
+     */
     public void roomReservation(ActionEvent event){
         try {
             Reservation r = new Reservation();
