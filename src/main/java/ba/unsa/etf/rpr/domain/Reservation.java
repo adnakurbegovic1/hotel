@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Domain Javabean class Reservation
+ */
 public class Reservation implements Idable {
     private int id;
     private LocalDate arrivalDate;
