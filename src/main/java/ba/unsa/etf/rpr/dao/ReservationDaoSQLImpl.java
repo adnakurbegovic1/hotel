@@ -98,12 +98,13 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
         }
     }
 
-    public ObservableList<Reservation> myReservations() throws HotelException{
-        String query = "SELECT * FROM reservations";
+    public ObservableList<Reservation> myReservations(int id) throws HotelException{
+        String query = "SELECT * FROM reservations WHERE userId = ?";
 
         ObservableList<Reservation> result = FXCollections.observableArrayList();
         try {
             PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 result.add(row2object(rs));
