@@ -10,6 +10,13 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
  * @author Adna Kurbegović
  */
 public class RoomManager {
+
+    /**
+     * This method adds room
+     * @param room
+     * @return
+     * @throws HotelException
+     */
     public static Room addRoom(Room room) throws HotelException {
         try {
             return DaoFactory.roomDao().add(room);
