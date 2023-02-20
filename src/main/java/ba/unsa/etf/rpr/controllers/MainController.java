@@ -57,6 +57,10 @@ public class MainController {
         }
     }
 
+    /**
+     * This method returns user from main page to addRoom page.
+     * @param event
+     */
     public void addNewRoom(ActionEvent event){
         try {
             Stage stage = (Stage) btnAddRoom.getScene().getWindow();
