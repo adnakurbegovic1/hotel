@@ -15,6 +15,11 @@ import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX controller for creation and alteration of Room object
+ *
+ * @author Adna Kurbegović
+ */
 public class AddRoomController {
 
     public Button btnAdd;
