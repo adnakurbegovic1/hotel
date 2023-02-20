@@ -50,6 +50,12 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
             throw new HotelException(e.getMessage(), e);
         }
     }
+
+    /**
+     * Method for mapping Object into Map
+     * @param object - a bean object for rooms table
+     * @return key, value sorted map of object
+     */
     @Override
     public Map<String, Object> object2row(Room object) {
         Map<String, Object> item = new TreeMap<String, Object>();
