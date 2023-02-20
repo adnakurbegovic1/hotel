@@ -118,7 +118,7 @@ public class MainController {
         try {
             Stage stage = (Stage) btnMyReservations.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/myReservations.fxml"));
-            MyReservationController cont = new MyReservationController();
+            MyReservationsController cont = new MyReservationsController();
             fxmlLoader.setController(cont);
             stage.setTitle("Moje rezervacije");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
