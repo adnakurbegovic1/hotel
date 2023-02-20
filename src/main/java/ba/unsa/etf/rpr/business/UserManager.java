@@ -26,6 +26,12 @@ public class UserManager {
         return u;
     }
 
+    /**
+     * This method adds new user
+     * @param user
+     * @return
+     * @throws HotelException
+     */
     public static User registration(User user) throws HotelException {
         try {
             return DaoFactory.userDao().add(user);
