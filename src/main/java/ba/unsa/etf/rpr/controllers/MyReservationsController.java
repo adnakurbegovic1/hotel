@@ -23,6 +23,11 @@ public class MyReservationsController {
 
     private User user;
 
+    /**
+     * Constructor
+     * @param user
+     */
+
     public MyReservationsController(User user){
         this.user = user;
     }
