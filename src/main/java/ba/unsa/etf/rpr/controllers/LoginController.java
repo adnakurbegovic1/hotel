@@ -46,6 +46,10 @@ public class LoginController {
         }
     }
 
+    /**
+     * This method opens the main page.
+     * @param event
+     */
     public void goToMain(ActionEvent event){
         try {
             u.setPassword(passwordId.getText());
