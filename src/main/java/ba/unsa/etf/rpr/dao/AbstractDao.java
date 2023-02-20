@@ -58,6 +58,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
      */
     public abstract T row2object(ResultSet rs) throws HotelException;
 
+    /**
+     * Method for mapping Object into Map
+     * @param object - a bean object for specific table
+     * @return key, value sorted map of object
+     */
     public abstract Map<String, Object> object2row(T object);
 
     public T getById(int id) throws HotelException {
