@@ -43,6 +43,12 @@ public class UserManager {
         if(name.equals("") ) valid = false;
         return valid;
     }
+
+    public static boolean isSurnameValid(String surname) {
+        boolean valid = true;
+        if(surname.equals("") ) valid = false;
+        return valid;
+    }
     /**
      * This method adds new user
      * @param user
