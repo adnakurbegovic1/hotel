@@ -31,6 +31,11 @@ public class MyReservationsController {
         dao = ReservationDaoSQLImpl.getInstance();
         listOfReservations.setItems(dao.myReservations(user.getId()));
     }
+
+    /**
+     * This method returns user from main page to home page.
+     * @param event
+     */
     public void goBack(ActionEvent event){
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
