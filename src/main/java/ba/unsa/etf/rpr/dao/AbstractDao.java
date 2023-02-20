@@ -65,6 +65,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
      */
     public abstract Map<String, Object> object2row(T object);
 
+    /**
+     * Method for getting data by ID
+     * @param id
+     * @return data with given id
+     * @throws HotelException
+     */
     public T getById(int id) throws HotelException {
         return executeQueryUnique("SELECT * FROM "+this.tableName+" WHERE id = ?", new Object[]{id});
     }
