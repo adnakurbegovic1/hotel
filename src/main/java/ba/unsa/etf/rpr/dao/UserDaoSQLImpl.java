@@ -57,6 +57,10 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
         return row;
     }
 
+    /**
+     * @param email search string for users
+     * @return user
+     */
     public User getByEmail(String email) throws HotelException{
         String query = "SELECT * FROM  users  WHERE email = ?";
         try{
