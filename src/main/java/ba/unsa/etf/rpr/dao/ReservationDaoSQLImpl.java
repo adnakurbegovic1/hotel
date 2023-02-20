@@ -30,6 +30,12 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
             instance=null;
     }
 
+    /**
+     * Method for mapping ResultSet into Object
+     * @param rs - result set from database
+     * @return a Bean object for reservations table
+     * @throws HotelException in case of error with db
+     */
     @Override
     public Reservation row2object(ResultSet rs) throws HotelException {
         try{
