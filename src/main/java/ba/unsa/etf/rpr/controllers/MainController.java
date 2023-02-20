@@ -27,6 +27,8 @@ public class MainController {
     public Button btnBooking;
     public Button btnAddRoom;
     public Button btnBack;
+
+    public Button btnMyReservations;
     private RoomDaoSQLImpl dao;
 
     private User user;
@@ -103,6 +105,22 @@ public class MainController {
             HomeController cont = new HomeController();
             fxmlLoader.setController(cont);
             stage.setTitle("Hotel \"50 zvjezdica\"");
+            stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+        }
+        catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+    public void viewMyReservation(ActionEvent event){
+        try {
+            Stage stage = (Stage) btnMyReservations.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/myReservations.fxml"));
+            MyReservationController cont = new MyReservationController();
+            fxmlLoader.setController(cont);
+            stage.setTitle("Moje rezervacije");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
             stage.show();
