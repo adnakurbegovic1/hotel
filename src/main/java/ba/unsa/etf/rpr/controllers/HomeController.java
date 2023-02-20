@@ -18,6 +18,10 @@ public class HomeController {
     public Button loginBtn;
     public Button registrationBtn;
 
+    /**
+     * This method opens the login page.
+     * @param event
+     */
     public void showLoginPage(ActionEvent event){
         try {
             Stage stage = (Stage) loginBtn.getScene().getWindow();
