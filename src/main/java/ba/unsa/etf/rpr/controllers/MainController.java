@@ -41,6 +41,10 @@ public class MainController {
         dao = RoomDaoSQLImpl.getInstance();
         listOfRooms.setItems(dao.allRooms());
     }
+    /**
+     * This method opens reservation page.
+     * @param event
+     */
     public void goBookingRoom(ActionEvent event){
         try {
             Stage stage = (Stage) btnBooking.getScene().getWindow();
@@ -58,7 +62,7 @@ public class MainController {
     }
 
     /**
-     * This method returns user from main page to addRoom page.
+     * This method opens addRoom page.
      * @param event
      */
     public void addNewRoom(ActionEvent event){
