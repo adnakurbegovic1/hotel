@@ -35,7 +35,10 @@ public class ReservationController {
 
     public User user;
 
-
+    /**
+     * Constructor
+     * @param user
+     */
     public ReservationController(User user){
         this.user = user;
     }
