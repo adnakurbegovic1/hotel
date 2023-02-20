@@ -11,6 +11,13 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
  */
 public class UserManager {
 
+    /**
+     *This method logs user in o
+     * @param email
+     * @param password
+     * @return user from database
+     * @throws HotelException
+     */
     public static User login(String email, String password) throws HotelException {
 
         if (email == null || password.equals("")) {
