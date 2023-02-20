@@ -26,6 +26,9 @@ public class MyReservationsController {
     public MyReservationsController(User user){
         this.user = user;
     }
+    /**
+     * Initialize method happens as soon as window is opened.
+     */
     @FXML
     public void initialize() throws HotelException {
         dao = ReservationDaoSQLImpl.getInstance();
