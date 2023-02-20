@@ -84,6 +84,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+    /**
+     * Method for adding data
+     * @param item
+     * @return item
+     * @throws HotelException
+     */
+
     public T add(T item) throws HotelException{
         Map<String, Object> row = object2row(item);
         Map.Entry<String, String> columns = prepareInsertParts(row);
