@@ -73,6 +73,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         return executeQuery("SELECT * FROM "+ tableName, null);
     }
 
+    /**
+     * Method for delete data from datebase
+     * @param id
+     * @throws HotelException
+     */
     public void delete(int id) throws HotelException {
         String sql = "DELETE FROM "+tableName+" WHERE id = ?";
         try{
