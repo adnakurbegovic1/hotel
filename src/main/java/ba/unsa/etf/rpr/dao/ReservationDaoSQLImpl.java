@@ -20,6 +20,11 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
         super("reservations");
     }
 
+    /**
+     * @return ReservationDaoSQLImpl
+     * We don't need more than one object for CRUD operations on table 'reservations' so we will use Singleton
+     * This method will call private constructor in instance==null and then return that instance
+     */
     public static ReservationDaoSQLImpl getInstance(){
         if(instance==null)
             instance = new ReservationDaoSQLImpl();
