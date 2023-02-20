@@ -57,6 +57,10 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
         return item;
     }
 
+    /**
+     * @param start, end search dates for reservations
+     * @return list of reservations
+     */
     @Override
     public List<Reservation> getByDateRange(Date start, Date end) throws HotelException {
         List<Reservation> reservations = new ArrayList<>();
