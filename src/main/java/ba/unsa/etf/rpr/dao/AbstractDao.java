@@ -114,6 +114,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+    /**
+     * Method for updating data
+     * @param item
+     * @return item
+     * @throws HotelException
+     */
     public T update(T item) throws HotelException{
         Map<String, Object> row = object2row(item);
         String updateColumns = prepareUpdateParts(row);
