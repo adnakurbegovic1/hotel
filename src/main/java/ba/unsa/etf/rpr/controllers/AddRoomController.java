@@ -27,6 +27,10 @@ public class AddRoomController {
     public TextField capacityId;
     public TextField priceId;
 
+    /**
+     * This method adds new room in datebase.
+     * @param actionEvent
+     */
     public void addNewRoom(ActionEvent actionEvent) {
         try {
             Room r = new Room();
