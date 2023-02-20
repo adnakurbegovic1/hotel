@@ -114,6 +114,11 @@ public class MainController {
         }
     }
 
+    /**
+     * This method opens myReservations page.
+     * @param event
+     */
+
     public void viewMyReservation(ActionEvent event){
         try {
             Stage stage = (Stage) btnMyReservations.getScene().getWindow();
