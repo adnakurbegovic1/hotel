@@ -13,6 +13,11 @@ import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX controller for login management
+ *
+ * @author Adna Kurbegović
+ */
 public class LoginController {
 
     public Button cancelBtn;
