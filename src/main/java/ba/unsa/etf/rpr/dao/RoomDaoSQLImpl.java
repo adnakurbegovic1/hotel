@@ -53,7 +53,7 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
         return item;
     }
     /**
-     * @param capacity search string for quotes
+     * @param capacity search int for rooms
      * @return list of rooms
      * @author Adna Kurbegović
      */
@@ -77,7 +77,7 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
     }
 
     /**
-     * @param price search string for quotes
+     * @param price search int for rooms
      * @return list of rooms
      * @author Adna Kurbegović
      */
@@ -99,6 +99,9 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
         }
     }
 
+    /**
+     * @return list of all rooms
+     */
     public ObservableList<Room> allRooms() throws HotelException{
         String query = "SELECT * FROM rooms";
 
