@@ -32,6 +32,12 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
             instance=null;
     }
 
+    /**
+     * Method for mapping ResultSet into Object
+     * @param rs - result set from database
+     * @return a Bean object for rooms table
+     * @throws HotelException in case of error with db
+     */
     @Override
     public Room row2object(ResultSet rs) throws HotelException {
         try {
