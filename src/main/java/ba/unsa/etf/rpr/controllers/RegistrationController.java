@@ -27,6 +27,10 @@ public class RegistrationController {
     public TextField emailId;
     public PasswordField passwordId;
 
+    /**
+     * This method returns user from login page to home page.
+     * @param actionEvent
+     */
     public void backToHome(ActionEvent actionEvent) {
         try{
             Stage stage = (Stage) cancelBtn.getScene().getWindow();
