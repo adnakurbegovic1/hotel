@@ -48,6 +48,10 @@ public class RegistrationController {
 
     }
 
+    /**
+     * This method adds new user to the datebase.
+     * @param actionEvent
+     */
     public void registrationForNewUser(ActionEvent actionEvent) {
         try {
             User u = new User();
