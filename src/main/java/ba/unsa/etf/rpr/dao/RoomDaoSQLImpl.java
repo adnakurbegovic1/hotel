@@ -9,6 +9,11 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 import java.util.*;
 
+/**
+ * MySQL implementation of DAO
+ * @author Adna Kurbegović
+ */
+
 public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
 
     private static RoomDaoSQLImpl instance = null;
