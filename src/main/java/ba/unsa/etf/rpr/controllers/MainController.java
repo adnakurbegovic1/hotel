@@ -73,6 +73,10 @@ public class MainController {
         }
     }
 
+    /**
+     * This method returns user from main page to home page.
+     * @param event
+     */
     public void goBack(ActionEvent event){
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
