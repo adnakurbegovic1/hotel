@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.dao.ReservationDaoSQLImpl;
-import ba.unsa.etf.rpr.dao.RoomDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,10 +21,15 @@ public class MyReservationsController {
 
     private ReservationDaoSQLImpl dao;
 
+    private User user;
+
+    public MyReservationsController(User user){
+        this.user = user;
+    }
     @FXML
     public void initialize() throws HotelException {
         dao = ReservationDaoSQLImpl.getInstance();
-        listOfReservations.setItems(dao.myReservations());
+        listOfReservations.setItems(dao.myReservations(user.getId()));
     }
     public void goBack(ActionEvent event){
         try {
