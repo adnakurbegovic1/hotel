@@ -44,6 +44,12 @@ public class UserManager {
         return valid;
     }
 
+    /**
+     * This method checks if the surname is valid
+     * @param surname
+     * @return boolean
+     */
+
     public static boolean isSurnameValid(String surname) {
         boolean valid = true;
         if(surname.equals("") ) valid = false;
