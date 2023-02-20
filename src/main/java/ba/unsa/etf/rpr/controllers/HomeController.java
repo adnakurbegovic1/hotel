@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * This class handles events for home page
+ */
 public class HomeController {
 
     public Button loginBtn;
