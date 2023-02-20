@@ -20,6 +20,9 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
             createConnection();
     }
 
+    /**
+     * Create connection to database
+     */
     private static void createConnection(){
         if(AbstractDao.connection==null){
             try{
