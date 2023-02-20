@@ -9,6 +9,10 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * MySQL implementation of DAO
+ * @author Adna Kurbegović
+ */
 public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
 
     public UserDaoSQLImpl() {
