@@ -33,6 +33,10 @@ public class MainController {
 
     public MainController(){}
 
+    /**
+     * Constructor
+     * @param user
+     */
     public MainController(User user){
         this.user = user;
     }
