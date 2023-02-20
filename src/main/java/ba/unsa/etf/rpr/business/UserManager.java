@@ -85,6 +85,10 @@ public class UserManager {
      * @throws HotelException
      */
     public static User registration(User user) throws HotelException {
+
+        if ((!isNameValid(user.getName())) || (!isPasswordValid(user.getPassword())) || (!isEmailValid(user.getEmail())) || (!isSurnameValid(user.getSurname()))) {
+            throw new HotelException("Polja ne smiju biti prazna!");
+        }
         try {
             return DaoFactory.userDao().add(user);
         } catch (HotelException e) {
