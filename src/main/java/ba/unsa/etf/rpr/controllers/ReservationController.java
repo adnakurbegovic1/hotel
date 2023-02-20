@@ -13,9 +13,15 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.Date;
+
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
+
+/**
+ * JavaFX controller for creation and alteration of Reservation object
+ *
+ * @author Adna Kurbegović
+ */
 
 public class ReservationController {
 
