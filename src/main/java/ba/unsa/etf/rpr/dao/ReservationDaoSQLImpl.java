@@ -52,6 +52,11 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
 
     }
 
+    /**
+     * Method for mapping Object into Map
+     * @param object - a bean object for reservations table
+     * @return key, value sorted map of object
+     */
     @Override
     public Map<String, Object> object2row(Reservation object) {
         Map<String, Object> item = new TreeMap<String, Object>();
