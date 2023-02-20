@@ -10,5 +10,12 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
  */
 
 public interface UserDao  extends Dao<User>{
+
+    /**
+     * Returns user with the given email.
+     *
+     * @param email search string for users
+     * @return user
+     */
     User getByEmail(String email) throws HotelException;
 }
