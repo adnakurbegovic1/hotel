@@ -4,6 +4,11 @@ import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
+/**
+ * Business Logic Layer for management of User
+ *
+ * @author Adna Kurbegović
+ */
 public class UserManager {
 
     public static User login(String email, String password) throws HotelException {
