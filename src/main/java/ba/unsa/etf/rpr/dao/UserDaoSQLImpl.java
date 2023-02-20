@@ -31,6 +31,12 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
             instance=null;
     }
 
+    /**
+     * Method for mapping ResultSet into Object
+     * @param rs - result set from database
+     * @return a Bean object for users table
+     * @throws HotelException in case of error with db
+     */
     @Override
     public User row2object(ResultSet rs) throws HotelException {
         try {
