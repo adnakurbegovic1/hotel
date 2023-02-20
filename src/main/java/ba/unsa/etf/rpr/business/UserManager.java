@@ -55,6 +55,12 @@ public class UserManager {
         if(surname.equals("") ) valid = false;
         return valid;
     }
+
+    public static boolean isEmailValid(String email) {
+        boolean valid = true;
+        if(email.equals("") ) valid = false;
+        return valid;
+    }
     /**
      * This method adds new user
      * @param user
