@@ -17,10 +17,16 @@ import java.util.*;
 public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
 
     private static RoomDaoSQLImpl instance = null;
+
     public RoomDaoSQLImpl() {
         super("rooms");
     }
 
+    /**
+     * @return RoomDaoSQLImpl
+     * We don't need more than one object for CRUD operations on table 'rooms' so we will use Singleton
+     * This method will call private constructor in instance==null and then return that instance
+     */
     public static RoomDaoSQLImpl getInstance(){
         if(instance==null)
             instance = new RoomDaoSQLImpl();
