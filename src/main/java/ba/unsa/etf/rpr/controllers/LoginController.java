@@ -40,10 +40,10 @@ public class LoginController {
         try {
             u.setPassword(passwordId.getText());
             u.setEmail(emailId.getText());
-            UserManager.login(u.getEmail(), u.getPassword());
+            User user = UserManager.login(u.getEmail(), u.getPassword());
             Stage stage = (Stage) BtnLogin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-            MainController cont = new MainController(u);
+            MainController cont = new MainController(user);
             fxmlLoader.setController(cont);
             stage.setTitle("*****");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
