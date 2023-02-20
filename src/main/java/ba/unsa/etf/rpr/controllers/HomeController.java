@@ -39,6 +39,10 @@ public class HomeController {
         }
     }
 
+    /**
+     * This method opens the registation page.
+     * @param event
+     */
     public void showRegistrationPage(ActionEvent event){
         try {
             Stage stage = (Stage) registrationBtn.getScene().getWindow();
