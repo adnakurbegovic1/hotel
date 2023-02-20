@@ -14,6 +14,11 @@ import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX controller for registration management
+ *
+ * @author Adna Kurbegović
+ */
 public class RegistrationController {
     public Button cancelBtn;
     public Button btnRegistration;
