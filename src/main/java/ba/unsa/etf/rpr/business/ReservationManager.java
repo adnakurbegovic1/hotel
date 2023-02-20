@@ -11,7 +11,12 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
  */
 public class ReservationManager {
 
-
+    /**
+     * This method adds reservation
+     * @param reservation
+     * @return
+     * @throws HotelException
+     */
     public static Reservation addReservation(Reservation reservation) throws HotelException {
         try {
             return DaoFactory.reservationDao().add(reservation);
