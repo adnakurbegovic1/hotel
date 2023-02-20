@@ -41,7 +41,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Button>
-      <Button fx:id="BtnLogin" mnemonicParsing="false" onAction="#goToMain" text="Prijavi se" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Button fx:id="BtnLogin" mnemonicParsing="false" onAction="#goToMain" prefHeight="27.0" prefWidth="68.0" text="Prijavi se" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>

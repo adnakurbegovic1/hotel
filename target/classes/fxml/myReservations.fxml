@@ -23,6 +23,6 @@
          </padding>
       </Label>
       <ListView prefHeight="204.0" prefWidth="331.0" GridPane.rowIndex="1" />
-      <Button fx:id="btnGoBack" mnemonicParsing="false" onAction="#goBack" text="Nazad" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Button fx:id="btnBack" mnemonicParsing="false" onAction="#goBack" text="Nazad" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
    </children>
 </GridPane>
