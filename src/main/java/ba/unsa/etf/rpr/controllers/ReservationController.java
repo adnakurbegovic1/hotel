@@ -79,6 +79,10 @@ public class ReservationController {
 
     }
 
+    /**
+     * This method returns user to main page.
+     * @param event
+     */
     public void goBack(ActionEvent event){
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
