@@ -52,6 +52,11 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao{
         }
     }
 
+    /**
+     * Method for mapping Object into Map
+     * @param object - a bean object for users table
+     * @return key, value sorted map of object
+     */
     @Override
     public Map<String, Object> object2row(User object) {
         Map<String, Object> row = new TreeMap<String, Object>();
