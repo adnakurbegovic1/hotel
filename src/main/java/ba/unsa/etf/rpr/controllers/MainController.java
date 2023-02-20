@@ -31,6 +31,9 @@ public class MainController {
 
     private User user;
 
+    /**
+     * Constructor without params
+     */
     public MainController(){}
 
     /**
