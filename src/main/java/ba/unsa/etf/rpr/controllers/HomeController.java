@@ -12,6 +12,8 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 /**
  * This class handles events for home page
+ *
+ * @author Adna Kurbegović
  */
 public class HomeController {
 

@@ -16,6 +16,11 @@ import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * This class handles events for main page
+ *
+ *  @author Adna Kurbegović
+ */
 public class MainController {
 
     public ListView listOfRooms;
