@@ -55,6 +55,10 @@ public class AddRoomController {
         }
     }
 
+    /**
+     * back button event handler
+     * @param event
+     */
     public void goBack(ActionEvent event){
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
