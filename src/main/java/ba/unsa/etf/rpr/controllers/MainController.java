@@ -36,6 +36,10 @@ public class MainController {
     public MainController(User user){
         this.user = user;
     }
+
+    /**
+     * Initialize method happens as soon as window is opened.
+     */
     @FXML
     public void initialize() throws HotelException {
         dao = RoomDaoSQLImpl.getInstance();
