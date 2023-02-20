@@ -2,6 +2,9 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
+/**
+ * Domain Javabean class Room
+ */
 public class Room implements Idable {
 
     private int id;
