@@ -68,6 +68,11 @@ public class UserManager {
         return valid;
     }
 
+    /**
+     * This method checks if the password is valid
+     * @param password
+     * @return boolean
+     */
     public static boolean isPasswordValid(String password) {
         boolean valid = true;
         if(password.equals("") ) valid = false;
