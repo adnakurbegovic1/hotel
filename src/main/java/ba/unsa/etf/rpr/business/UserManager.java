@@ -33,7 +33,11 @@ public class UserManager {
         return u;
     }
 
-
+    /**
+     * This method checks if the name is valid
+     * @param name
+     * @return boolean
+     */
     public static boolean isNameValid(String name) {
         boolean valid = true;
         if(name.equals("") ) valid = false;
