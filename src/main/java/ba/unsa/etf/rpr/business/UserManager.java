@@ -56,6 +56,12 @@ public class UserManager {
         return valid;
     }
 
+    /**
+     * This method checks if the email is valid
+     * @param email
+     * @return boolean
+     */
+
     public static boolean isEmailValid(String email) {
         boolean valid = true;
         if(email.equals("") ) valid = false;
