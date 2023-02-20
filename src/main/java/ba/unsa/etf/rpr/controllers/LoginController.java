@@ -25,6 +25,11 @@ public class LoginController {
     public PasswordField passwordId;
     public Button BtnLogin;
     User u = new User();
+
+    /**
+     * This method returns user from login page to home page.
+     * @param actionEvent
+     */
     public void backToHome(ActionEvent actionEvent) {
         try{
             Stage stage = (Stage) cancelBtn.getScene().getWindow();
