@@ -11,6 +11,12 @@ import java.util.Scanner;
  */
 public class App {
 
+    /**
+     * Main method
+     *
+     * @param args
+     * @throws HotelException
+     */
     public static void main(String[] args) throws HotelException {
 
         System.out.println("Za prijavu upišite P, a za registraciju R: ");
