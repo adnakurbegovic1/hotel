@@ -21,6 +21,9 @@ class UserTest {
         user.setPassword("adna");
     }
 
+    /**
+     * Method tests getter for attribute name
+     */
     @Test
     void getName() {
         assertEquals("Adna", user.getName());
