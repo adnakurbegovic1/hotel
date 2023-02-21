@@ -19,6 +19,9 @@ class RoomTest {
         room.setPrice(50);
     }
 
+    /**
+     * Method tests getter for attribute capacity
+     */
     @Test
     void getCapacity() {
         assertEquals(2, room.getCapacity());
