@@ -133,6 +133,11 @@ public class App {
 
     }
 
+    /**
+     * Method for adding new room
+     * @param id
+     * @throws HotelException
+     */
     public static void addNewRoom(int id) throws HotelException {
         Integer capacity;
         Integer price;
