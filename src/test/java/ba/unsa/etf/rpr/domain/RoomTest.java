@@ -29,5 +29,6 @@ class RoomTest {
 
     @Test
     void getPrice() {
+        assertEquals(50, room.getPrice());
     }
 }
