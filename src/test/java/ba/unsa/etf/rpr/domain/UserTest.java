@@ -1,6 +1,9 @@
 package ba.unsa.etf.rpr.domain;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class UserTest {
@@ -16,5 +19,10 @@ class UserTest {
         user.setSurname("Kurbegovic");
         user.setEmail("akurbegovi1@etf.unsa.ba");
         user.setPassword("adna");
+    }
+
+    @Test
+    void getName() {
+        assertEquals("Adna", user.getName());
     }
 }
