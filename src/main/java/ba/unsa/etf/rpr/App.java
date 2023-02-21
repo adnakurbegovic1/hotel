@@ -223,6 +223,21 @@ public class App {
         }
     }
 
+    private static void showMyReservations(int id) throws HotelException {
+        ObservableList<Reservation> listOfReservations = DaoFactory.reservationDao().myReservations(id);
+
+        if (listOfReservations.isEmpty()) {
+            System.out.println("Nemate rezervacija!");
+            showUser(id);
+            return;
+        }
+
+        System.out.println("Sve sobe: ");
+        for (int i = 0; i < listOfReservations.size(); i++) {
+            System.out.println("Broj rezervacije: " + listOfReservations.get(i).getId() + " | Datum dolaska: " + listOfReservations.get(i).getArrivalDate() + " | Datum odlaska: " + listOfReservations.get(i).getDepartudeDate() + " | Gost: " + listOfReservations.get(i).getUser().getName() +  " " + listOfReservations.get(i).getUser().getSurname());
+        }
+    }
+
 
 
 }

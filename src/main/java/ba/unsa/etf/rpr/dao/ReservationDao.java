@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.exceptions.HotelException;
+import javafx.collections.ObservableList;
 
 import java.util.Date;
 import java.util.List;
@@ -21,4 +22,6 @@ public interface ReservationDao  extends Dao<Reservation>{
      * @return List of reservations
      */
     List<Reservation> getByDateRange(Date start, Date end) throws HotelException;
+
+    ObservableList<Reservation> myReservations(Integer id) throws HotelException;
 }
