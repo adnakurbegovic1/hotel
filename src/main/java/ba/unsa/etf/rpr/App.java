@@ -94,6 +94,12 @@ public class App {
         }
     }
 
+    /**
+     * Method that shows options for User
+     * @param id
+     * @throws HotelException
+     */
+
     public static void showUser(int id) throws HotelException  {
         System.out.println("Imate sljedeće opcije: ");
         System.out.println("1: Dodavanje nove sobe");
