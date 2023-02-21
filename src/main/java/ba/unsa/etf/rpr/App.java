@@ -1,8 +1,10 @@
 package ba.unsa.etf.rpr;
 
+import ba.unsa.etf.rpr.business.ReservationManager;
 import ba.unsa.etf.rpr.business.RoomManager;
 import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
@@ -157,6 +159,33 @@ public class App {
 
         RoomManager.addRoom(room);
         System.out.println("Soba uspješno dodana! ");
+        showUser(id);
+    }
+
+    public static void bookingRoom(int id) throws HotelException {
+        Integer roomNumber;
+        LocalDate arrivalDate;
+        LocalDate departureDate;
+
+        System.out.println("Upišite broj sobe: ");
+        Scanner rNScanner = new Scanner(System.in);
+        roomNumber = Integer.valueOf(rNScanner.next());
+
+        System.out.println("Unesite datum dolaska: ");
+        Scanner aDScanner = new Scanner(System.in);
+        arrivalDate = LocalDate.parse(aDScanner.next());
+
+        System.out.println("Unesite datum odlaska: ");
+        Scanner dDScanner = new Scanner(System.in);
+        departureDate = LocalDate.parse(dDScanner.next());
+
+
+        Reservation r = new Reservation();
+        r.setRoomNumber(roomNumber);
+
+
+        ReservationManager.addReservation(r);
+        System.out.println("Soba uspješno rezervisana! ");
         showUser(id);
     }
 
