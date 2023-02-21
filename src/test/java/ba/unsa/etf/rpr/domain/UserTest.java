@@ -37,6 +37,9 @@ class UserTest {
         assertEquals("Kurbegovic", user.getSurname());
     }
 
+    /**
+     * Method tests getter for attribute email
+     */
     @Test
     void getEmail() {
         assertEquals("akurbegovi1@etf.unsa.ba", user.getEmail());
