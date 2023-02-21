@@ -50,6 +50,9 @@ class ReservationTest {
         assertEquals(1, r.getRoomNumber());
     }
 
+    /**
+     * Method tests getter for attribute user
+     */
     @Test
     void getUser() {
         assertEquals("Adna", r.getUser().getName());
