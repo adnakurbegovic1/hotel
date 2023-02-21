@@ -57,13 +57,11 @@ public class Reservation implements Idable {
 
     @Override
     public String toString() {
-        return "Reservation{" +
-                "id=" + id +
-                ", arrivalDate=" + arrivalDate +
-                ", departudeDate=" + departudeDate +
-                ", user=" + user +
-                ", roomNumber=" + roomNumber +
-                '}';
+        return "Broj rezervacije: " + id +
+                " | Datum dolaska: " + arrivalDate +
+                " | Datum odlaska: " + departudeDate +
+                " | Gost: " + user.getName() + " " + user.getSurname() +
+                " | Broj sobe: " + roomNumber;
     }
 
     @Override
