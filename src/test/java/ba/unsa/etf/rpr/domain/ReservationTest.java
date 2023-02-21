@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -23,6 +24,11 @@ class ReservationTest {
         r.setArrivalDate(LocalDate.MAX);
         r.setRoomNumber(1);
         r.setUser(u);
+    }
+
+    @Test
+    void getArrivalDate() {
+        assertEquals(LocalDate.MIN, r.getArrivalDate());
     }
 
 }
