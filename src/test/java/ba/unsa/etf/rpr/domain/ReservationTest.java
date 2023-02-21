@@ -21,7 +21,7 @@ class ReservationTest {
         u.setName("Adna");
         r.setId(1);
         r.setArrivalDate(LocalDate.MIN);
-        r.setArrivalDate(LocalDate.MAX);
+        r.setDepartudeDate(LocalDate.MAX);
         r.setRoomNumber(1);
         r.setUser(u);
     }
@@ -32,6 +32,11 @@ class ReservationTest {
     @Test
     void getArrivalDate() {
         assertEquals(LocalDate.MIN, r.getArrivalDate());
+    }
+
+    @Test
+    void getDepartudeDate() {
+        assertEquals(LocalDate.MAX, r.getDepartudeDate());
     }
 
 }
