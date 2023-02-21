@@ -12,6 +12,9 @@ class ReservationTest {
     private Reservation r = new Reservation();
     private User u = new User();
 
+    /**
+     * Setting Room for testing
+     */
     @BeforeEach
     public void setRoom() {
         u.setName("Adna");
