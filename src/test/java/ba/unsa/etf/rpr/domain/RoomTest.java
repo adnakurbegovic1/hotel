@@ -21,6 +21,7 @@ class RoomTest {
 
     @Test
     void getCapacity() {
+        assertEquals(2, room.getCapacity());
     }
 
     @Test
