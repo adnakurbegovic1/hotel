@@ -56,6 +56,7 @@ public class App {
                     if (password.equals(user.getPassword())) break;
                 }
             }
+            showUser(user.getId());
         }
 
         if (value.equals("R")) {
@@ -86,11 +87,42 @@ public class App {
                 u.setPassword(password);
                 UserManager.registration(u);
                 System.out.println("Uspješna registracija!");
-
+                showUser(u.getId());
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
+
+    public static void showUser(int id) throws HotelException  {
+        System.out.println("Imate sljedeće opcije: ");
+        System.out.println("1: Dodavanje nove sobe");
+        System.out.println("2: Rezervacija sobe");
+        System.out.println("3: Pregled Vaših rezervacija");
+        Scanner scanner = new Scanner(System.in);
+        int option;
+
+        while(true) {
+            System.out.println("Izaberite opciju: ");
+            option = scanner.nextInt();
+            if (option >= 1 && option <= 3) break;
+            else System.out.println("Ponovite unos: ");
+        }
+
+        if (option == 1) {
+            addNewRoom(id);
+        }
+
+        if (option == 2) {
+            bookingRoom(id);
+        }
+
+        if (option == 3) {
+            showMyReservations(id);
+        }
+
+    }
+
+
 
 }
