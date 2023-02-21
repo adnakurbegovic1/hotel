@@ -8,8 +8,11 @@ import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -111,6 +114,7 @@ public class App {
         System.out.println("1: Dodavanje nove sobe");
         System.out.println("2: Rezervacija sobe");
         System.out.println("3: Pregled Vaših rezervacija");
+        System.out.println("4: Pregled svih soba");
         Scanner scanner = new Scanner(System.in);
         int option;
 
@@ -131,6 +135,10 @@ public class App {
 
         if (option == 3) {
             showMyReservations(id);
+        }
+
+        if (option == 4) {
+            showAllRooms(id);
         }
 
     }
@@ -193,6 +201,21 @@ public class App {
         ReservationManager.addReservation(r);
         System.out.println("Soba uspješno rezervisana! ");
         showUser(id);
+    }
+
+    private static void showAllRooms(int id) throws HotelException {
+        ObservableList<Room> listOfRooms = DaoFactory.roomDao().allRooms();
+
+        if (listOfRooms.isEmpty()) {
+            System.out.println("Lista soba je prazna!");
+            showUser(id);
+            return;
+        }
+
+        System.out.println("Sve sobe: ");
+        for (int i = 0; i < listOfRooms.size(); i++) {
+            System.out.println("Broj sobe: " + listOfRooms.get(i).getId() + " | Kapacitet: " + listOfRooms.get(i).getCapacity() + " | Cijena: " + listOfRooms.get(i).getPrice());
+        }
     }
 
 

@@ -120,6 +120,8 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
     /**
      * @return list of all rooms
      */
+
+    @Override
     public ObservableList<Room> allRooms() throws HotelException{
         String query = "SELECT * FROM rooms";
 
