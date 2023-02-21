@@ -8,11 +8,8 @@ import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
-import javafx.beans.Observable;
 import javafx.collections.ObservableList;
-
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Scanner;
 
 /**
