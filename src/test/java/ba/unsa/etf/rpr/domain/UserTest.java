@@ -28,4 +28,9 @@ class UserTest {
     void getName() {
         assertEquals("Adna", user.getName());
     }
+
+    @Test
+    void getSurname() {
+        assertEquals("Kurbegovic", user.getSurname());
+    }
 }
