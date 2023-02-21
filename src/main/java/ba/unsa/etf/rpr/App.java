@@ -223,6 +223,11 @@ public class App {
         }
     }
 
+    /**
+     * Method that shows list of all reservations for user
+     * @param id
+     * @throws HotelException
+     */
     private static void showMyReservations(int id) throws HotelException {
         ObservableList<Reservation> listOfReservations = DaoFactory.reservationDao().myReservations(id);
 
