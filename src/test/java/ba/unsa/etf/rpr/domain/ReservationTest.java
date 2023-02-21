@@ -42,4 +42,9 @@ class ReservationTest {
         assertEquals(LocalDate.MAX, r.getDepartudeDate());
     }
 
+    @Test
+    void getRoomNumber() {
+        assertEquals(1, r.getRoomNumber());
+    }
+
 }
