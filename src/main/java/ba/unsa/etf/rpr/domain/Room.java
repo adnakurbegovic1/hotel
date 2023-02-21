@@ -38,7 +38,7 @@ public class Room implements Idable {
     public String toString() {
         return "Broj sobe: " + id +
                 " | Kapacitet: " + capacity +
-                " | Cijena (KM):" + price;
+                " | Cijena (KM): " + price;
     }
 
     @Override
