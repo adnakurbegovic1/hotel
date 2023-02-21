@@ -34,6 +34,9 @@ class ReservationTest {
         assertEquals(LocalDate.MIN, r.getArrivalDate());
     }
 
+    /**
+     * Method tests getter for attribute departureDate
+     */
     @Test
     void getDepartudeDate() {
         assertEquals(LocalDate.MAX, r.getDepartudeDate());
