@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 class UserTest {
     private User user = new User();
 
+    /**
+     * Setting User for testing
+     */
     @BeforeEach
     public void setUser() {
         user.setId(1);
