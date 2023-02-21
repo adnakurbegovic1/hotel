@@ -6,6 +6,9 @@ import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import java.util.Scanner;
 
+/**
+ * This is terminal user interface
+ */
 public class App {
 
     public static void main(String[] args) throws HotelException {
