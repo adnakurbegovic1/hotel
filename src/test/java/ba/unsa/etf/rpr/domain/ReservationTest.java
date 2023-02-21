@@ -50,4 +50,9 @@ class ReservationTest {
         assertEquals(1, r.getRoomNumber());
     }
 
+    @Test
+    void getUser() {
+        assertEquals("Adna", r.getUser().getName());
+    }
+
 }
