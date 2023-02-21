@@ -221,6 +221,7 @@ public class App {
         for (int i = 0; i < listOfRooms.size(); i++) {
             System.out.println("Broj sobe: " + listOfRooms.get(i).getId() + " | Kapacitet: " + listOfRooms.get(i).getCapacity() + " | Cijena: " + listOfRooms.get(i).getPrice());
         }
+        showUser(id);
     }
 
     /**
@@ -241,6 +242,7 @@ public class App {
         for (int i = 0; i < listOfReservations.size(); i++) {
             System.out.println("Broj rezervacije: " + listOfReservations.get(i).getId() + " | Datum dolaska: " + listOfReservations.get(i).getArrivalDate() + " | Datum odlaska: " + listOfReservations.get(i).getDepartudeDate() + " | Gost: " + listOfReservations.get(i).getUser().getName() +  " " + listOfReservations.get(i).getUser().getSurname());
         }
+        showUser(id);
     }
 
 
