@@ -203,6 +203,11 @@ public class App {
         showUser(id);
     }
 
+    /**
+     * Method that shows list of all rooms
+     * @param id
+     * @throws HotelException
+     */
     private static void showAllRooms(int id) throws HotelException {
         ObservableList<Room> listOfRooms = DaoFactory.roomDao().allRooms();
 
