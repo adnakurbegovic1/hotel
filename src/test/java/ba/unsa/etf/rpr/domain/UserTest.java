@@ -29,6 +29,9 @@ class UserTest {
         assertEquals("Adna", user.getName());
     }
 
+    /**
+     * Method tests getter for attribute surname
+     */
     @Test
     void getSurname() {
         assertEquals("Kurbegovic", user.getSurname());
