@@ -52,16 +52,14 @@ public class App {
 
                 if (user == null) {
                     System.out.println("Email nije ispravan. Ponovite unos! ");
-                    String email2;
                     Scanner Scanner2 = new Scanner(System.in);
-                    email2 = Scanner2.next();
+                    email = Scanner2.next();
                 }
 
                 if (!user.getPassword().equals(password)) {
                     System.out.println("Pogrešan password. Ponovite unos! ");
-                    String password2;
                     Scanner Scanner2 = new Scanner(System.in);
-                    password2 = Scanner2.next();
+                    password = Scanner2.next();
                     if (password.equals(user.getPassword())) break;
                 }
             }
