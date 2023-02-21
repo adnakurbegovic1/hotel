@@ -162,6 +162,12 @@ public class App {
         showUser(id);
     }
 
+    /**
+     * Method for adding new reservation
+     * @param id
+     * @throws HotelException
+     */
+
     public static void bookingRoom(int id) throws HotelException {
         Integer roomNumber;
         LocalDate arrivalDate;
