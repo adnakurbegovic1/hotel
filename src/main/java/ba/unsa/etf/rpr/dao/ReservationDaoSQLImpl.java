@@ -101,7 +101,7 @@ public class ReservationDaoSQLImpl extends AbstractDao<Reservation> implements R
     /**
      * @return list of reservations for user
      */
-    public ObservableList<Reservation> myReservations(int id) throws HotelException{
+    public ObservableList<Reservation> myReservations(Integer id) throws HotelException{
         String query = "SELECT * FROM reservations WHERE userId = ?";
 
         ObservableList<Reservation> result = FXCollections.observableArrayList();
