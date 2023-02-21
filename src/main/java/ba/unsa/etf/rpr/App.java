@@ -23,6 +23,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         String value;
         value = scanner.next();
+
         if (value.equals("P")) {
             String email;
             String password;
@@ -34,7 +35,7 @@ public class App {
             User user = DaoFactory.userDao().getByEmail(email);
 
             while (true) {
-                // If login is successful
+
                 if (user != null && user.getPassword().equals(password)) {
                     System.out.println("Prijava uspješna!");
                     break;
@@ -55,8 +56,6 @@ public class App {
                     if (password.equals(user.getPassword())) break;
                 }
             }
-
-            //  showEmployee(user.getId());
         }
 
         if (value.equals("R")) {
@@ -65,6 +64,7 @@ public class App {
                 String surname;
                 String email;
                 String password;
+
                 System.out.println("Unesite ime: ");
                 Scanner enterName = new Scanner(System.in);
                 name = enterName.next();
@@ -86,7 +86,7 @@ public class App {
                 u.setPassword(password);
                 UserManager.registration(u);
                 System.out.println("Uspješna registracija!");
-                // showEmployee(u.getId());
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
