@@ -9,6 +9,9 @@ class RoomTest {
 
     private Room room = new Room();
 
+    /**
+     * Setting Room for testing
+     */
     @BeforeEach
     public void setRoom() {
         room.setId(1);
