@@ -45,6 +45,9 @@ class UserTest {
         assertEquals("akurbegovi1@etf.unsa.ba", user.getEmail());
     }
 
+    /**
+     * Method tests getter for attribute password
+     */
     @Test
     void getPassword() {
         assertEquals("adna", user.getPassword());
