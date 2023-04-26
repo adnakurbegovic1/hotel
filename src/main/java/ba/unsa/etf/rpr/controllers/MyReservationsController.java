@@ -1,15 +1,17 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.dao.ReservationDaoSQLImpl;
+import ba.unsa.etf.rpr.dao.RoomDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Reservation;
+import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -17,11 +19,16 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class MyReservationsController {
     public Button btnBack;
 
-    public ListView listOfReservations;
-
     private ReservationDaoSQLImpl dao;
 
     private User user;
+
+    public TableView tableReservation;
+
+    TableColumn id ;
+    TableColumn arrivalDate ;
+    TableColumn departudeDate;
+    TableColumn roomNumber;
 
     /**
      * Constructor
@@ -37,7 +44,16 @@ public class MyReservationsController {
     @FXML
     public void initialize() throws HotelException {
         dao = ReservationDaoSQLImpl.getInstance();
-        listOfReservations.setItems(dao.myReservations(user.getId()));
+        id = new TableColumn<>("Broj rezervacije");
+        arrivalDate = new TableColumn<>("Datum dolaska");
+        departudeDate = new TableColumn<>("Datum odlaska");
+        roomNumber = new TableColumn("Broj sobe");
+        id.setCellValueFactory(new PropertyValueFactory<Reservation, String>("id"));
+        arrivalDate.setCellValueFactory(new PropertyValueFactory<Reservation, String>("arrivalDate"));
+        departudeDate.setCellValueFactory(new PropertyValueFactory<Reservation, String>("departudeDate"));
+        roomNumber.setCellValueFactory(new PropertyValueFactory<Reservation, String>("roomNumber"));
+        tableReservation.getColumns().addAll(id, arrivalDate, departudeDate, roomNumber); // add the columns to the TableView
+        tableReservation.getItems().addAll(dao.myReservations(user.getId())); // add the data to the TableView
     }
 
     /**

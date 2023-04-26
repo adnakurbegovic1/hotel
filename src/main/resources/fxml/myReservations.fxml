@@ -22,7 +22,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <ListView fx:id="listOfReservations" prefHeight="318.0" prefWidth="531.0" GridPane.rowIndex="1" />
+      <TableView fx:id="tableReservation" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
       <Button fx:id="btnBack" mnemonicParsing="false" onAction="#goBack" text="Nazad" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
    </children>
 </GridPane>
