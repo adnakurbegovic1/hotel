@@ -1,19 +1,23 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.ReservationManager;
+import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Reservation;
+import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.User;
+import ba.unsa.etf.rpr.exceptions.HotelException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.skin.ChoiceBoxSkin;
 import javafx.stage.Stage;
 
 
+import java.util.ArrayList;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -29,12 +33,18 @@ public class ReservationController {
 
     public Button btnBack;
 
-    public TextField roomNumberId;
+    public ChoiceBox<Room> choiseBoxId ;
+
+
     public DatePicker arrivalDateId;
     public DatePicker departudeDateId;
 
     public User user;
 
+    public void initialize() throws HotelException {
+        ObservableList<Room> rooms = DaoFactory.roomDao().allRooms();
+        choiseBoxId.setItems(rooms);
+    }
     /**
      * Constructor
      * @param user
@@ -51,7 +61,7 @@ public class ReservationController {
     public void roomReservation(ActionEvent event){
         try {
             Reservation r = new Reservation();
-            r.setRoomNumber(Integer.parseInt(roomNumberId.getText()));
+            r.setRoomNumber((choiseBoxId.getValue().getId()));
             r.setArrivalDate(arrivalDateId.getValue());
             r.setDepartudeDate(departudeDateId.getValue());
             r.setUser(user);
@@ -66,7 +76,7 @@ public class ReservationController {
             Stage stage = (Stage) btnRezervisi.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-            fxmlLoader.setController(new MainController());
+            fxmlLoader.setController(new MainController(user));
             Parent root = fxmlLoader.load();
             stage.setTitle("*****");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
@@ -87,7 +97,7 @@ public class ReservationController {
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-            MainController cont = new MainController();
+            MainController cont = new MainController(user);
             fxmlLoader.setController(cont);
             stage.setTitle("*****");
             stage.setScene(new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));

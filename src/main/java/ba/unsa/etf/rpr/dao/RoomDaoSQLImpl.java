@@ -3,8 +3,13 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.beans.Observable;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.util.Callback;
 
 import java.sql.*;
 import java.util.*;
@@ -137,4 +142,5 @@ public class RoomDaoSQLImpl extends AbstractDao<Room> implements RoomDao {
             throw new HotelException(e.getMessage(), e);
         }
     }
+
 }

@@ -3,15 +3,16 @@ package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.dao.RoomDao;
 import ba.unsa.etf.rpr.dao.RoomDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -23,7 +24,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  */
 public class MainController {
 
-    public ListView listOfRooms;
+    public TableView listOfRooms;
     public Button btnBooking;
     public Button btnAddRoom;
     public Button btnBack;
@@ -32,6 +33,10 @@ public class MainController {
     private RoomDaoSQLImpl dao;
 
     private User user;
+
+    TableColumn id ;
+    TableColumn capacity ;
+    TableColumn price;
 
     /**
      * Constructor without params
@@ -51,8 +56,21 @@ public class MainController {
      */
     @FXML
     public void initialize() throws HotelException {
+
+        id = new TableColumn<>("Broj sobe");
+        capacity = new TableColumn<>("Kapacitet");
+        price = new TableColumn<>("Cijena");
+
         dao = RoomDaoSQLImpl.getInstance();
-        listOfRooms.setItems(dao.allRooms());
+
+        id.setCellValueFactory(new PropertyValueFactory<Room, String>("id"));
+        capacity.setCellValueFactory(new PropertyValueFactory<Room, String>("capacity"));
+        price.setCellValueFactory(new PropertyValueFactory<Room, String>("price"));
+
+        listOfRooms.getColumns().addAll(id, capacity, price); // add the columns to the TableView
+        listOfRooms.getItems().addAll(dao.allRooms()); // add the data to the TableView
+
+
     }
     /**
      * This method opens reservation page.
